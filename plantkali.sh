@@ -21,3 +21,4 @@ xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual
 cp /usr/share/backgrounds/kali-heart/kali-heart-wp-1920x1080.jpg /usr/share/desktop-base/kali-theme/login/background
 curl 'https://upload.wikimedia.org/wikipedia/en/2/2d/SSU_Kirby_artwork.png' > /home/plantplants/Pictures/kirby.png
 sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/lightdm-gtk-greeter.conf
+sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
