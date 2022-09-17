@@ -4,6 +4,9 @@
 
 echo 'Run as root'
 
+userhome="/home/plantplants"
+toolbox="/home/plantplants/toolbox"
+
 apt update
 
 # Setting up plantplants
@@ -20,8 +23,12 @@ sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/l
 sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Tools
-mkdir /home/plantplants/toolbox
-cd /home/plantplants/toolbox
+mkdir $toolbox
+cd $toolbox
+echo '\nexport PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
+
+pip install droopescan
+virtualenv -p /usr/bin/python2 $toolbox/python2env
 
 # apt install
 apt install seclists
