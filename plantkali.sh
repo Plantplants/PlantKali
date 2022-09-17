@@ -4,16 +4,12 @@
 
 echo 'Run as root'
 
+apt update
+
 # Setting up plantplants
 usermod -l plantplants kali
 usermod -d /home/plantplants -m plantplants
 groupmod -n plantplants kali
-apt update
-
-
-cd /home/plantplants
-mkdir toolbox
-cd toolbox
 
 # Backgrounds/logos
 apt install -y kali-wallpapers-legacy
@@ -22,3 +18,10 @@ cp /usr/share/backgrounds/kali-heart/kali-heart-wp-1920x1080.jpg /usr/share/desk
 curl 'https://upload.wikimedia.org/wikipedia/en/2/2d/SSU_Kirby_artwork.png' > /home/plantplants/Pictures/kirby.png
 sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/lightdm-gtk-greeter.conf
 sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
+
+# Tools
+mkdir /home/plantplants/toolbox
+cd /home/plantplants/toolbox
+
+# apt install
+apt install seclists
