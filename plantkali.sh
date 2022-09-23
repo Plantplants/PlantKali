@@ -21,9 +21,9 @@ echo 'export PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
 
 # Backgrounds/logos
 apt install -y kali-wallpapers-legacy
-xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual1/workspace0/last-image --set /usr/share/backgrounds/kali-heart/kali-heart-wp-blue-1920x1080.jpg
-cp /usr/share/backgrounds/kali-heart/kali-heart-wp-1920x1080.jpg /usr/share/desktop-base/kali-theme/login/background
 curl 'https://upload.wikimedia.org/wikipedia/en/2/2d/SSU_Kirby_artwork.png' > /home/plantplants/Pictures/kirby.png
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image --set /usr/share/backgrounds/kali-heart/kali-heart-wp-blue-1920x1080.jpg
+cp /usr/share/backgrounds/kali-heart/kali-heart-wp-1920x1080.jpg /usr/share/desktop-base/kali-theme/login/background
 sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/lightdm-gtk-greeter.conf
 sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -36,4 +36,4 @@ virtualenv -p /usr/bin/python2 $toolbox/python2env
 echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> /home/plantplants/.zshrc
 
 # apt install
-apt install seclists
+# apt install seclists
