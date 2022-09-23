@@ -7,7 +7,8 @@ echo 'Run as root'
 userhome="/home/plantplants"
 toolbox="/home/plantplants/toolbox"
 
-apt update
+# apt update
+# apt upgrade
 
 # Setting up plantplants
 usermod -l plantplants kali
@@ -16,8 +17,7 @@ groupmod -n plantplants kali
 
 # Setting up toolbox
 mkdir $toolbox
-echo '\nexport PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
-
+echo 'export PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
 
 # Backgrounds/logos
 apt install -y kali-wallpapers-legacy
@@ -28,11 +28,12 @@ sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/l
 sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Tools
-echo '\nexport PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
 
-pip install droopescan --target $toolbox/droopescan
+# installation conflict
+# pip install droopescan --target $toolbox/droopescan
+
 virtualenv -p /usr/bin/python2 $toolbox/python2env
+echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> /home/plantplants/.zshrc
 
 # apt install
 apt install seclists
-apt install go
