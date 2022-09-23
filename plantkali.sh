@@ -11,9 +11,10 @@ toolbox="/home/plantplants/toolbox"
 # apt upgrade
 
 # Setting up plantplants
+# pkill -u kali pid ; pkill -9 -u kali
 usermod -l plantplants kali
-usermod -d /home/plantplants -m plantplants
 groupmod -n plantplants kali
+usermod -d /home/plantplants -m plantplants
 
 # Setting up toolbox
 mkdir $toolbox
