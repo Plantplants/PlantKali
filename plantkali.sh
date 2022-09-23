@@ -14,6 +14,11 @@ usermod -l plantplants kali
 usermod -d /home/plantplants -m plantplants
 groupmod -n plantplants kali
 
+# Setting up toolbox
+mkdir $toolbox
+echo '\nexport PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
+
+
 # Backgrounds/logos
 apt install -y kali-wallpapers-legacy
 xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual1/workspace0/last-image --set /usr/share/backgrounds/kali-heart/kali-heart-wp-blue-1920x1080.jpg
@@ -23,11 +28,9 @@ sed -i 's/#emblem-kali/\/home\/plantplants\/Pictures\/kirby.png/' /etc/lightdm/l
 sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Tools
-mkdir $toolbox
-cd $toolbox
 echo '\nexport PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
 
-pip install droopescan
+pip install droopescan --target $toolbox/droopescan
 virtualenv -p /usr/bin/python2 $toolbox/python2env
 
 # apt install
