@@ -35,3 +35,4 @@ virtualenv -p /usr/bin/python2 $toolbox/python2env
 
 # apt install
 apt install seclists
+apt install go
