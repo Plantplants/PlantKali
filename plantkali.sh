@@ -39,6 +39,9 @@ echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> /home/plantplants/.zshrc
 # apt install
 apt install seclists
 
+# terminal
+sed -i 's/fontSize=10/fontSize=14/' /etc/default/console-setup/qterminal.ini
+
 # setup.sh
 echo '#!/bin/bash\n xfconf-query -c xfce4-desktop
   -p /backdrop/screen0/monitorVirtual1/workspace0/last-image
