@@ -41,6 +41,7 @@ echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> /home/plantplants/.zshrc
 apt install seclists
 
 # terminal
+# /home/plantplants/.config/qterminal.org/qterminal.ini
 sed -i 's/fontSize=10/fontSize=14/' /etc/default/console-setup/qterminal.ini
 
 # setup.sh
