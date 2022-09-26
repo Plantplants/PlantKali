@@ -6,6 +6,7 @@ echo 'Run as root'
 
 userhome="/home/plantplants"
 toolbox="/home/plantplants/toolbox"
+zshrc="/home/plantplants/.zshrc"
 
 apt update
 apt upgrade
@@ -17,9 +18,12 @@ usermod -l plantplants kali
 groupmod -n plantplants kali
 usermod -m -d /home/plantplants plantplants
 
+# PATH
+echo 'toolbox="/home/plantplants/toolbox"' >> $zshrc
+
 # Setting up toolbox
 mkdir $toolbox
-echo 'export PATH="$PATH:$toolbox"' >> /home/plantplants/.zshrc
+echo 'export PATH="$PATH:$toolbox"' >> $zshrc
 
 # Backgrounds/logos
 apt install -y kali-wallpapers-legacy
@@ -35,14 +39,14 @@ sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 # pip install droopescan --target $toolbox/droopescan
 
 virtualenv -p /usr/bin/python2 $toolbox/python2env
-echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> /home/plantplants/.zshrc
+echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> $zshrc
 
 ## go
 cd $userhome/Download
 wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz
 export PATH="$PATH:/usr/local/go/bin"
-echo 'PATH="$PATH:/usr/local/go/bin"' >> /home/plantplants/.zshrc
+echo 'PATH="$PATH:/usr/local/go/bin"' >> $zshrc
 
 # apt install
 apt install seclists
