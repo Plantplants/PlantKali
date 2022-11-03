@@ -37,6 +37,9 @@ sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 
 # installation conflict
 # pip install droopescan --target $toolbox/droopescan
+cd $toolbox
+git clone https://github.com/ticarpi/jwt_tool.git
+git clone https://github.com/internetwache/GitTools.git
 
 virtualenv -p /usr/bin/python2 $toolbox/python2env
 echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> $zshrc
