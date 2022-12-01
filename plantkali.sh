@@ -40,6 +40,10 @@ sed -i 's/Kali-Light/Kali-Dark/' /etc/lightdm/lightdm-gtk-greeter.conf
 cd $toolbox
 git clone https://github.com/ticarpi/jwt_tool.git
 git clone https://github.com/internetwache/GitTools.git
+git clone https://github.com/arthaud/git-dumper.git
+git clone https://github.com/frohoff/ysoserial.git
+git clone https://github.com/ambionics/phpggc.git
+git clone https://github.com/GDSSecurity/GWT-Penetration-Testing-Toolset.git
 
 virtualenv -p /usr/bin/python2 $toolbox/python2env
 echo 'export PATH="$PATH:$toolbox/python2env/bin"' >> $zshrc
