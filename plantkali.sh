@@ -69,15 +69,8 @@ apt install seclists
 
 # terminal
 # /home/plantplants/.config/qterminal.org/qterminal.ini
-sed -i 's/fontSize=10/fontSize=14/' /etc/default/console-setup/qterminal.ini
+sed -i 's/fontSize=10/fontSize=14/' $userhome/.config/qterminal.org/qterminal.ini
 
-# setup.sh
-#echo '#!/bin/bash\n xfconf-query -c xfce4-desktop
-#  -p /backdrop/screen0/monitorVirtual1/workspace0/last-image
-#  --set /usr/share/backgrounds/kali-heart/kali-heart-wp-blue-1920x1080.jpg'
-#  > $toolbox/setup.sh
-  
 # permissions
 chown plantplants:plantplants $toolbox
 chown plantplants:plantplants $toolbox/*
-#chmod +x $toolbox/setup.sh
